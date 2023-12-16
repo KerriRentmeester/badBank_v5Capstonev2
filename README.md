@@ -1,4 +1,4 @@
-
+<img src="bankUI.png" alt="app UI" width="400"/>
 
 # **Project Name**
 Bad Bank app - the 5th iteration: a Three Tier Bank 
@@ -30,10 +30,10 @@ Some Features employed:
 The Three Tier Bank project is an example of the following skills and capabilities: routing, context, tracking state, event handling, and parent/child relationships. I employed Bootstrap and CSS for styling, as well as HTML5, JavaScript, and JSX. As such, this project is one component of my professional portfolio. This particular project is based off of a similar activity I worked on in September through December of 2023 from Modules 18, 19, 26, Portfolio II, and the Capstone Project in the MIT xPro via Emeritus bootcamp I was enrolled in called "Professional Certificate in Coding: Full Stack Development with MERN."
 
 # **Dependencies**: 
-The project relies on the following dependencies: ReactJS, Bootstrap, Babel, Express, NodeJS, MongoDB. Note: I am using an outdated versions: MOngoDB 3.6.2, NodeJS 14.21.3, npm 6.14.18, (Firebase CLI v13.0.1 is too high).
+The project relies on the following dependencies: ReactJS, Bootstrap, Babel, Express, NodeJS, MongoDB. Note: I am using an outdated versions: React v16, NodeJS 16, npm 6.14.18.
 
 # **Usage**: 
-To run my project on your machine, download the files onto your machine or clone the repo. 
+To duplicate my project and run your own version, download the files onto your machine or clone the repo. 
 
 ** Make adjustments to the app:
 * Go to FireBase and create a project with a web app. 
@@ -52,12 +52,20 @@ To run my project on your machine, download the files onto your machine or clone
 * Ensure Docker is open on your desktop
 * Type terminal command: docker run -p 27017:27017 --name badbankcapstone -d mongo (To initiate Docker running.)
 * Type terminal command: npm install
-* Type terminal command: npm init 
-* Type terminal command: firebase login 
-* Type terminal command: firebase init 
-* Type terminal command: firebase deploy
-* After deploying, in the terminal, you will find 1 or 2 links to copy. One link: Project Console will bring you to FireBase. Second link: Hosting URL. 
-* If a Hosting URL did not generate, then in terminal type: firebase open hosting:site. Go to the site to view app.
+* On AtlasDB, create an account.
+* On AtlasDB, create a database (choose the free option).
+* On AtlasDB, create a cluster.
+* On AtlasDB, Connect to cluster (via Driver).
+* On AtlasDB, create a collection called 'users' (within target cluster, click on add data/create db/ & name db 'myproject' & name collection 'users')
+* On AtlasDB, click on Network Access (in left menu). Notice your IP address. Add another address: 0.0.0.0/0 
+* Copy the Connection String (unique to you-don't share.) (Connection String format: mongodb+srv://<username>:<password>@<cluster-name>.<jibberish>.mongodb.net/?retryWrites=true&w=majority)
+* In dal.js on/near line for, substitute your Connection String for the const url.
+* In MongoDB Compass, Create a New Collection. In the URI field, place your Connection String.
+* In MongoDB Compass, ensure that you have a database called myproject and a collection called users.
+* Type terminal command:  node index.js
+* In your browser, navigate to address: localhost:3000 to run on your local server.
+
+* Deploy on something like Heroku or SW3 bucket
 
 # **Support**: 
 Please contact me via email at krentmeester@uwalumni.com.
@@ -73,6 +81,10 @@ Future fixes or improvements that would be helpful to a user:
 * Remove the AllData page
 * NavBar tab is highlighted for the active page
 * Add additional security - biometrics, or two-factor authentication for authentication (instead of only username & password).
+* Add Show/ Hide password toggle option
+* Add transaction history
+* Add additional sign-on methods
+* Add different types of accounts (ex/ savings, checking)
 
 # **License**: 
 MIT License
