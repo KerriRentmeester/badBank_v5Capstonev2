@@ -1,8 +1,8 @@
 // admin configuration
-const admin = require('firebase-admin');
+import admin from 'firebase-admin';
 
 // load the service acct key from JSON
-const serviceAccount = require("./AuthRoutes.json");
+import serviceAccount from './AuthRoutes.json' assert { type: "json" };
 
 // initialize FB Admin SDK w/ provided service acct credentials
 admin.initializeApp({
@@ -10,4 +10,4 @@ admin.initializeApp({
 });
 
 // export configured admin object
-module.exports = admin;
+export default admin;
