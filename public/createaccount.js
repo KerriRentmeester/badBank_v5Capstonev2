@@ -3,6 +3,21 @@ function CreateAccount(){
   const [status, setStatus] = React.useState('');
   //const accountNumber = generateAccountNumber();
 
+  // Handle the account creation, e.g., fetch updated data
+  const handleAccountCreated = async () => {
+    console.log('Account created!');
+
+    // Fetch updated data
+    try {
+      const response = await fetch('/account/all');
+      const updatedData = await response.json();
+      console.log('Updated Data:', updatedData);
+      // Update the state or re-render the component with the new data
+    } catch (error) {
+      console.error('Error fetching updated data:', error);
+    }
+  };
+
   return (
     <Card
       bgcolor="primary"
@@ -10,7 +25,7 @@ function CreateAccount(){
       width="300px"
       status={status}
       body={show ?
-        <CreateForm setShow={setShow}/> :
+        <CreateForm setShow={setShow} onAccountCreated={handleAccountCreated} /> :
         <CreateMsg setShow={setShow}/>}
     />
   )
@@ -34,14 +49,25 @@ function CreateForm(props){
   // connect to BE
   function handle(){
     console.log(name,email,password);  // sending these params to BE
-    const url = `/account/create/${name}/${email}/${password}`;
-    (async () => {
-        var res  = await fetch(url);
-        var data = await res.json();
+
+    // API call to create acct
+    fetch(`/account/create/${name}/${email}/${password}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
         console.log(data);  // write to console what we get back from server 
-    })();
-    props.setShow(false); // update UI to show a new user was created
-  }    
+        props.setShow(false); // update UI to show a new user was created
+        props.onAccountCreated(); // callback to inform that a new acct was created
+      })
+      .catch(error => {
+        console.error('Error creating account:', error);
+        // Handle the error as needed
+      });
+  }
 
   return (<>
 

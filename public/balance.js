@@ -1,6 +1,6 @@
 function Balance(){
   const [show, setShow]     = React.useState(true);
-  const [status, setStatus] = React.useState('');  
+  const [status, setStatus] = React.useState('');
 
   return (
     <div className="balance">
@@ -10,7 +10,7 @@ function Balance(){
       header="Balance"
       width="300px"
       status={status}
-      body={show ? 
+      body={show ?
         <BalanceForm setShow={setShow} setStatus={setStatus} /> :
         <BalanceMsg setShow={setShow} setStatus={setStatus} />}
     />

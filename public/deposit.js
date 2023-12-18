@@ -1,7 +1,7 @@
 function Deposit(){
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');
-  
+
   return (
     <Card
       bgcolor="success"
@@ -75,7 +75,11 @@ function DepositForm(props){
             props.setStatus('Deposit failed')
             console.log('err:', text);
         }
-    });
+      })
+      .catch(error => {
+          props.setStatus('Error during deposit');
+          console.log('error:', error);
+      });
 
     return true; // If none of the above conditions are met, the validation is successful & this statement signals success
   }

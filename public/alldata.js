@@ -18,12 +18,14 @@ function AllData(){
       })
       .catch(error => {
         console.error('Error fetching data:', error);
+        //console.log('API Data in case of error:', apiData);
         // Handle the error as needed
       });
   }, []);
 
     return (
         <div className="alldata">
+        <p className="card-description">All accounts data is listed here: </p>
         <Card
           bgcolor="info"
           txtcolor="white"
@@ -42,7 +44,6 @@ function AllData(){
                     </thead>
                     <tbody>
                         {data.map(account => ( 
-                        
                             <tr key={account._id}>
                                 <td>{account._id}</td>
                                 <td>{account.name}</td>
