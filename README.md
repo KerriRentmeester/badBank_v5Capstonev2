@@ -1,10 +1,10 @@
-<img src="./images/LandingPage.jpg" alt="App UI Landing Page" width="400"/>
-<img src="../images/CreateAcct.jpg" alt="App UI Create Account Page" width="400"/>
-<img src="images/Login.jpg" alt="App UI Login Page" width="400"/>
-<img src="images/Deposit.jpg" alt="App UI Deposit Page" width="400"/>
-<img src="images/Withdraw.jpg" alt="App UI Withdraw Page" width="400"/>
-<img src="images/Balance.jpg" alt="App UI Balance Page" width="400"/>
-<img src="images/AllData.jpg" alt="App UI All Data Page" width="400"/>
+<img src="images/LandingPage.png" alt="App UI Landing Page" width="400"/>
+<img src="images/CreateAcct.png" alt="App UI Create Account Page" width="400"/>
+<img src="images/Login.png" alt="App UI Login Page" width="400"/>
+<img src="images/Deposit.png" alt="App UI Deposit Page" width="400"/>
+<img src="images/Withdraw.png" alt="App UI Withdraw Page" width="400"/>
+<img src="images/Balance.png" alt="App UI Balance Page" width="400"/>
+<img src="images/AllData.png" alt="App UI All Data Page" width="400"/>
 
 # **Project Name**
 Bad Bank app - the 5th iteration: a Three Tier Bank 
