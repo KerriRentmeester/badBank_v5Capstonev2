@@ -1,10 +1,42 @@
-<img src="bankUI.png" alt="app UI" width="400"/>
+<img src="images/LandingPage.jpg" alt="App UI Landing Page" width="400"/>
+<img src="images/CreateAcct.jpg" alt="App UI Create Account Page" width="400"/>
+<img src="images/Login.jpg" alt="App UI Login Page" width="400"/>
+<img src="images/Deposit.jpg" alt="App UI Deposit Page" width="400"/>
+<img src="images/Withdraw.jpg" alt="App UI Withdraw Page" width="400"/>
+<img src="images/Balance.jpg" alt="App UI Balance Page" width="400"/>
+<img src="images/AllData.jpg" alt="App UI All Data Page" width="400"/>
 
 # **Project Name**
 Bad Bank app - the 5th iteration: a Three Tier Bank 
 
 
 ** This version of my code works. I could not figure out how to hide private key in AuthRoutes.json or how to hide Connection String in dal.js 12/18/23 KR
+
+-- the rest of this README needs to be edited yet. --
+
+# **Description**: 
+The Three Tier Bank project, a three tier Next.js app, initiates on the home page, with a welcome message and security warning. The first step would be to "Create Account" on its Register page or "Login" on its Login page. Once logged in, the user can "Deposit" or "Withdraw" or view his/her account "Balance." Unfortunately the account balance is not linked across pages at this time. On the final page, one can see "AllData" transactions.
+
+The Three Tier Bank project will likely be deployed via Amazon Web Service S3 bucket and can be accessed here to see its capabilities: link coming soon.
+
+This iteration of the project has outdated code, incompatible with the latest version of React node.js. I used node.js version 16.20.1 on my local machine to make it work.
+
+The following Validation was employed:
+* All submit buttons are disabled until all the fields have input.
+* Email input fields on the Login and Create Account pages require correct email format, otherwise a warning will appear.
+* Password input fields on the Login and Create Account pages require 8 or more characters.
+* Both Deposit and Withdraw input fields require positive integers, otherwise a warning will appear.
+* The Withdraw input cannot exceed the account balance, otherwise an overdraft warning will appear.
+
+Some Features employed:
+* When hovering over the NavBar, a title appears explaining what each page is/does. 
+* Beware - Account Balance is NOT maintained across pages.
+* Each page has a different color card/content to further distinguish its purpose.
+
+The Three Tier Bank project is an example of the following skills and capabilities: routing, context, tracking state, event handling, and parent/child relationships. I employed Bootstrap and CSS for styling, as well as HTML5, JavaScript, and JSX. As such, this project is one component of my professional portfolio. This particular project is based off of a similar activity I worked on in September through December of 2023 from Modules 18, 19, 26, Portfolio II, and the Capstone Project in the MIT xPro via Emeritus bootcamp I was enrolled in called "Professional Certificate in Coding: Full Stack Development with MERN."
+
+# **Dependencies**: 
+The project relies on the following dependencies: ReactJS, Bootstrap, Babel, Express, NodeJS, MongoDB. Note: I am using an outdated versions: React v16, NodeJS 16, npm 6.14.18.
 
 # **Usage**: 
 To duplicate my project and run your own version, download the files onto your machine or clone the repo. 
@@ -44,6 +76,22 @@ To duplicate my project and run your own version, download the files onto your m
 
 # **Support**: 
 Please contact me via email at krentmeester@uwalumni.com.
+
+# **Roadmap**: 
+Future fixes or improvements that would be helpful to a user:
+
+* Make the Deposit, Withdraw, and AllData pages only visible upon logging in.
+* Track the account balance across all pages 
+* Track the account balance even after logging out
+* Once logged in, transport the user to an account page where all accounts are visible
+* Once an account is created, transport the user to an account page where all accounts are visible
+* Remove the AllData page
+* NavBar tab is highlighted for the active page
+* Add additional security - biometrics, or two-factor authentication for authentication (instead of only username & password).
+* Add Show/ Hide password toggle option
+* Add transaction history
+* Add additional sign-on methods
+* Add different types of accounts (ex/ savings, checking)
 
 # **License**: 
 MIT License
