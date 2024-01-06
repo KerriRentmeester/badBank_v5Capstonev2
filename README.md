@@ -1,23 +1,15 @@
-<!-- Table without lines -->
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  table, th, td {
-    border: none;
-  }
-</style>
 <!-- Table for displaying images in a row -->
 <table>
   <tr>
     <td><img src="images/LandingPage.png" alt="App UI Landing Page" width="400"/></td>
-    <td><img src="images/CreateAcct.png" alt="App UI Create Account Page" width="200"/></td>
-    <td><img src="images/Login.png" alt="App UI Login Page" width="200"/></td>
   </tr>
-  <tr>
-    <td><img src="images/Deposit.png" alt="App UI Deposit Page" width="175"/></td>
-    <td><img src="images/Withdraw.png" alt="App UI Withdraw Page" width="175"/></td>
-    <td><img src="images/Balance.png" alt="App UI Balance Page" width="175"/></td>
+</table>
+<table>
+    <td><img src="images/CreateAcct.png" alt="App UI Create Account Page" width="150"/></td>
+    <td><img src="images/Login.png" alt="App UI Login Page" width="150"/></td>
+    <td><img src="images/Deposit.png" alt="App UI Deposit Page" width="150"/></td>
+    <td><img src="images/Withdraw.png" alt="App UI Withdraw Page" width="150"/></td>
+    <td><img src="images/Balance.png" alt="App UI Balance Page" width="150"/></td>
   </tr>
 </table>
 <table>
