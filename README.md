@@ -1,4 +1,4 @@
-<img src="images/LandingPage.jpg" alt="App UI Landing Page" width="400"/>
+<img src="./images/LandingPage.jpg" alt="App UI Landing Page" width="400"/>
 <img src="images/CreateAcct.jpg" alt="App UI Create Account Page" width="400"/>
 <img src="images/Login.jpg" alt="App UI Login Page" width="400"/>
 <img src="images/Deposit.jpg" alt="App UI Deposit Page" width="400"/>
