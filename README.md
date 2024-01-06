@@ -1,7 +1,22 @@
-<img src="images/LandingPage.png" alt="App UI Landing Page" width="400"/>
-<img src="images/CreateAcct.png" alt="App UI Create Account Page" width="200"/> <img src="images/Login.png" alt="App UI Login Page" width="150"/>
-<img src="images/Deposit.png" alt="App UI Deposit Page" width="150"/> <img src="images/Withdraw.png" alt="App UI Withdraw Page" width="150"/> <img src="images/Balance.png" alt="App UI Balance Page" width="150"/>
-<img src="images/AllData.png" alt="App UI All Data Page" width="700"/>
+<!-- Table for displaying images in a row -->
+<table>
+  <tr>
+    <td><img src="images/LandingPage.jpg" alt="App UI Landing Page" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="images/CreateAcct.jpg" alt="App UI Create Account Page" width="200"/></td>
+    <td><img src="images/Login.jpg" alt="App UI Login Page" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="images/Deposit.png" alt="App UI Deposit Page" width="175"/> </td>
+    <td><img src="images/Withdraw.png" alt="App UI Withdraw Page" width="175"/></td>
+    <td><img src="images/Balance.png" alt="App UI Balance Page" width="175"/></td>
+  </tr>
+  <tr>
+    <td><img src="images/AllData.png" alt="App UI All Data Page" width="725"/></td>
+  </tr>
+</table>
+
 
 # **Project Name**
 Bad Bank app - the 5th iteration: a Three Tier Bank 
