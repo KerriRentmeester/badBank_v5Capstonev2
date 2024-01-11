@@ -1,6 +1,5 @@
 import pkg from 'mongodb';
 const { MongoClient } = pkg;
-
 //import config from './config.js';
 //import * as config from './config';
 
@@ -12,8 +11,8 @@ async function startServer() {
     // const url = 'mongodb://localhost:27017';  // point to local machine
     // Connection String format: mongodb+srv://<username>:<password>@<cluster-name>.<jibberish>.mongodb.net/?retryWrites=true&w=majority  // points to the cloud so all data is shared with all users
     // const url = config.MONGODB_URL;  // points to the cloud so all data is shared with all users
-    // const url = process.env.MONGODB_URL // points to the cloud so all data is shared with all users
-    const url = 'mongodb+srv://INSERT_CONNECTION_STRING_HERE_mongodb.net/?retryWrites=true&w=majority';
+    const url = process.env.MONGODB_URL // points to the cloud so all data is shared with all users
+    //const url = 'mongodb+srv://krentmeester:mnoo1325@cluster0.jro0rtf.mongodb.net/?retryWrites=true&w=majority';
     console.log("Connecting to MongoDB at: ", url);
 
     try {
@@ -23,6 +22,7 @@ async function startServer() {
         console.log("Connected successfully to db server");
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
+        throw error;
     }
 }
 
@@ -59,6 +59,7 @@ async function startServer() {
         })
     }
 
+    //why is this in here twice-2 versions?
     // find user account
     function findOne(email) {
         return new Promise((resolve, reject) => {

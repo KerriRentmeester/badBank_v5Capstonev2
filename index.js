@@ -1,13 +1,13 @@
-// server files
-import dotenv from 'dotenv';
-dotenv.config();
+// server-side script using Node.js and Express: defines Express server that handles HTTP req & interacts with MongoDB
+// handles back end logic: user acct creation, login, db operations
+import 'dotenv/config'
 import express from 'express';
 import cors from 'cors';
 import dal from './dal.js';
-import admin from './admin.js';
+//import dal from '../dal.js';
+//import admin from '../admin.js';
+
 const { create, findOne, find, update, all } = dal;
-
-
 const app = express();
 
 // used to serve static files from public directory
@@ -33,7 +33,6 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
                         res.send(user);
                     });
             }
-
         });
 });
 

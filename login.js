@@ -1,5 +1,8 @@
+// handles Firebase-related login logic
 import { initializeApp } from 'firebase/app';
 import 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 function Login(){
     // The web app's Firebase configuration
@@ -20,7 +23,7 @@ function Login(){
     // get elements
     const email = document.getElementById('email');
     const password = document.getElementById('password');
-    const login = document.getElementById('login');  
+    const login = document.getElementById('login');
     const signup = document.getElementById('signup');
     const logout = document.getElementById('logout');
 
@@ -45,6 +48,7 @@ function Login(){
 	});
 
     // login state
+	// hide and show buttons depending on state
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser) {
 			console.log(firebaseUser);
