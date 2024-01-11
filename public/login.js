@@ -1,6 +1,7 @@
+// UI Login page
 function Login(){
   const [show, setShow]     = React.useState(true);
-  const [status, setStatus] = React.useState('');    
+  const [status, setStatus] = React.useState('');
 
   return (
     <Card
@@ -36,19 +37,21 @@ function LoginForm(props){
     // connect to BE
     function handle(){
       console.log(email,password);  // sending these params to BE
-    fetch(`/account/login/${email}/${password}`)
-    .then(response => response.text())
-    .then(text => {
-        try {
-            const data = JSON.parse(text);
-            props.setStatus('Login successful');
-            props.setShow(false);
-            console.log('JSON:', data);
-        } catch(err) {
-            props.setStatus(text)
-            console.log('err:', text);
-        }
-    });
+    
+      // API call
+      fetch(`/account/login/${email}/${password}`)
+      .then(response => response.text())
+      .then(text => {
+          try {
+              const data = JSON.parse(text);
+              props.setStatus('Login successful');
+              props.setShow(false);
+              console.log('JSON:', data);
+          } catch(err) {
+              props.setStatus(text)
+              console.log('err:', text);
+          }
+      });
   }
 
   return (<>

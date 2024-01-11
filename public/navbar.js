@@ -25,7 +25,10 @@ function NavBar(){
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#/alldata/">AllData</a>
-          </li>          
+          </li>
+          <li className="nav-item">
+            <button id="logout" style={{ display: 'inline-block' }}>Logout</button>
+          </li>  
         </ul>
       </div>
     </nav>
