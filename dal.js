@@ -1,3 +1,5 @@
+// dal.js handles comm between app bus logic & db
+// contains the logic for the API to hit the endpoints and what data from the database to return
 import pkg from 'mongodb';
 const { MongoClient } = pkg;
 //import config from './config.js';
@@ -12,7 +14,6 @@ async function startServer() {
     // Connection String format: mongodb+srv://<username>:<password>@<cluster-name>.<jibberish>.mongodb.net/?retryWrites=true&w=majority  // points to the cloud so all data is shared with all users
     // const url = config.MONGODB_URL;  // points to the cloud so all data is shared with all users
     const url = process.env.MONGODB_URL // points to the cloud so all data is shared with all users
-    //const url = 'mongodb+srv://krentmeester:mnoo1325@cluster0.jro0rtf.mongodb.net/?retryWrites=true&w=majority';
     console.log("Connecting to MongoDB at: ", url);
 
     try {

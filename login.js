@@ -1,3 +1,80 @@
+// Import necessary Firebase modules
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+
+/// The web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional. measurementID is used when Google Analytics is enabled.
+const firebaseConfig = {
+	apiKey: process.env.REACT_APP_API_KEY,
+	authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+	projectId: process.env.REACT_APP_PROJECT_ID,
+	messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+	appId: process.env.REACT_APP_APP_ID,
+};
+
+// Initialize Firebase app
+const app = initializeApp(firebaseConfig);
+
+// Get Firebase Auth instance
+const auth = getAuth(app);
+
+// Get elements (input fields)
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const login = document.getElementById('login');
+const signup = document.getElementById('signup');
+const logout = document.getElementById('logout');
+
+// Event listeners
+// login
+login.addEventListener('click', async () => {
+    try {
+        await signInWithEmailAndPassword(auth, email.value, password.value);
+    } catch (error) {
+        console.error(error.message);
+    }
+});
+
+//sign up
+signup.addEventListener('click', e => {
+	// check for real email
+	const auth  = firebase.auth();
+	const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
+	promise.catch(e => console.log(e.message));
+});
+
+// logout
+logout.addEventListener('click', e => {
+	firebase.auth().signOut();
+});
+
+// Auth state listener
+// Hide and show buttons depending on login state
+auth.onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+        logout.style.display = 'inline';
+        login.style.display = 'none';
+        signup.style.display = 'none';
+    } else {
+        console.log('User is not logged in');
+        logout.style.display = 'none';
+        login.style.display = 'inline';
+        signup.style.display = 'inline';
+    }
+});
+
+export default firebaseConfig;
+
+
+
+
+
+
+
+
+
+/*
 // handles Firebase-related login logic
 import { initializeApp } from 'firebase/app';
 import 'firebase/auth';
@@ -65,3 +142,4 @@ function Login(){
 }
 
 export default firebaseConfig;
+/*
